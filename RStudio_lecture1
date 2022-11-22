@@ -25,3 +25,29 @@
 5%/%3
 # to identify the remainder of a division:
 5%%3
+
+# a "#" is a comment, and it could be located both on a blank raw or next to a function. It is used to give useful information
+# a shortcut to run a line of a code without clicking on "Run" is clicking on whichever point on that line and pressing ctrl+enter 
+# to comment many lines of codes all at once, select the lines you want to comment and press ctrl+shift+C
+# to "undo" an action press ctrl+z, to "redo" an action press ctrl+shift+z
+
+# to store a calculation, a model or whatever, store it in a variable:
+variable <- "value"
+# where "variable" is the variable's name; "<-" is a simbol to achieve a certain task, an operator, such as "+, -, *, / and ^", and in this case it's an assignement operator; and "value" is the value that we want to assign
+# you can also use "., _,  , and many other thing in the variable's name
+# if you put an assignment between (), you also see its content:
+(Pegasus <- "2*2")
+# alt+- creates the assignment operator " <- ", spaces included
+# to subscribe new values onto the same variable, just assign a new value and the previous one will be deleted:
+Pegasus <- "3*3"
+# if you assign a commad to a variable, when you'll type the variable name afterwards, it will automatically give you the result of the operation:
+Fairy <- 3^3
+Fairy
+# we can use variables to represent certain values, thus making operations easier
+Fairy*2
+
+# to check the documentation of a function:
+help("function name")
+# or also
+?sum
+# where "?" is another operator
