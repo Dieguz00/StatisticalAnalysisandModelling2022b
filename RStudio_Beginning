@@ -1,0 +1,27 @@
+
+
+
+
+
+
+
+
+
+# if you run a simple command, such as a mathematical operation, you can run it and RStudio will calculate it. Here are some classic operations:
+# sum
+1+1
+# subtraction
+2-1
+# multiplication
+3*3
+# division
+4/2
+# exponentiation (?)
+4^2
+4**2
+# we can modify the number of decimals and obtain the integer division, by removing the decimals:
+4/3
+5/3
+5%/%3
+# to identify the remainder of a division:
+5%%3
