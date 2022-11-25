@@ -72,3 +72,32 @@ full_name
 
 ### Packages:
 # vegan started as a package for vegetation ecology, but then it became one of the major packages of R
+# we can install packages thanks to the option "Install packages" (used for the "vegan" package) or, alternatively, using the function:
+install.packages("palmerpenguins")
+# important! the project must be reproducible, so all the commands have to be in a logical order
+# we can retrieve packages using the "library" function:
+library(vegan)
+# usually, quotes are not used when using this function
+
+# we can specify the exact package from which we want to pick and use a function:
+dplyr::select(function name)
+raster::select(function name)
+
+# don't deselect a package in the package list, otherwise the code won't be reproducible
+
+
+### Syntax errors:
+# happen when you write something that's not supposed to be written
+# for example, letters:
+greet <- "hello"
+greets
+# or also, commas, that are essential to separate arguments:
+paste(first_world second_world)
+paste(first_world,. second_world)
+# or also, spaces:
+greet < - "hello"
+# or, finally, parenthesis, to close functions:
+print("hello world"
+# in this last case, the "+" will appear, and we'll just have to close it with ")"
+
+# by the way, also other types of parenthesis (square, curly) are available
