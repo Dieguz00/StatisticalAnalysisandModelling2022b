@@ -1,0 +1,53 @@
+# different ways to change panel settings and appearance
+
+### data types:
+
+## logical values (T or F):
+# TRUE (or T) is a value with no quotes:
+TRUE
+T
+# FALSE (or F) is a value with no quotes
+FALSE
+F
+# we shouldn't try to ovverride T and F with other variables, otherwise we won't have them anymore
+
+## integer numbers (with no decimal numbers after comma)
+# to specify that you want to consider a number as an integer number:
+1L
+# and then we can use this function to understand the nature of the element:
+typeof(1L)
+# if we use the same function in these other cases, R says respectively "double" and "logical":
+typeof(1)
+typeof(T)
+# in our course, "numeric" means "double", that means that the number has both a part before comma and the other part after comma
+
+## numerical values
+
+## characters:
+# this category comprehends words:
+"hello"
+"a"
+"what have you been dreaming recently?"
+typeof("what have you been dreaming recently?")
+# however, if you put a number between quotes, it becomes a character:
+typeof("1")
+typeof("Via Irnerio 42")
+# to see information about the function "typeof":
+?typeof
+
+
+# not let's do this:
+print("Hello World")
+# create a variable
+first_world <- "Bellis"
+# create another one (with parenthesis, to make R report it instantly:
+(second_world <- "perennis")
+# and then paste them together:
+paste(first_world, second_world)
+# now let's assign to our product a new name:
+species_name <- paste(first_world, second_world)
+# to paste another element after the first two ones:
+paste(species_name, "L.")
+# to give a new name to this variable:
+full_name <- paste(species_name, "L.")
+full_name
