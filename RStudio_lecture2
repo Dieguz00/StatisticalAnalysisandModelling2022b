@@ -1,6 +1,6 @@
-# different ways to change panel settings and appearance
+### different ways to change panel settings and appearance
 
-### data types:
+### Data types:
 
 ## logical values (T or F):
 # TRUE (or T) is a value with no quotes:
@@ -10,18 +10,22 @@ T
 FALSE
 F
 # we shouldn't try to ovverride T and F with other variables, otherwise we won't have them anymore
+# if we use the "typeof" function on T or F, it says "logical":
+typeof(T)
 
 ## integer numbers (with no decimal numbers after comma)
 # to specify that you want to consider a number as an integer number:
 1L
-# and then we can use this function to understand the nature of the element:
+# and then we can use this function to understand the nature of the element, and it says "integer":
 typeof(1L)
-# if we use the same function in these other cases, R says respectively "double" and "logical":
-typeof(1)
-typeof(T)
-# in our course, "numeric" means "double", that means that the number has both a part before comma and the other part after comma
 
-## numerical values
+## numerical values:
+# every real number
+# in our course, "numeric" means "double", that means that the number has both a part before comma and the other part after comma:
+typeof(1)
+# instead, if we write a number like this one:
+0.00005
+# the result "5e-05" means 5 * 10 ^ (-5)
 
 ## characters:
 # this category comprehends words:
@@ -36,7 +40,7 @@ typeof("Via Irnerio 42")
 ?typeof
 
 
-# not let's do this:
+### not let's do this:
 print("Hello World")
 # create a variable
 first_world <- "Bellis"
@@ -51,3 +55,20 @@ paste(species_name, "L.")
 # to give a new name to this variable:
 full_name <- paste(species_name, "L.")
 full_name
+
+
+### if we type:
+"hello'
+# the "+" symbol says that R is expecting us to give it some more code
+# in this case, the solution is to close the quotes:
+"
+
+
+### actually there exist two other types of data on R
+# complex numbers:
+5i  # the "i", in reality, is different 
+# and raw values
+
+
+### Packages:
+# vegan started as a package for vegetation ecology, but then it became one of the major packages of R
