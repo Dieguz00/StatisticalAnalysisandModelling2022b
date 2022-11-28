@@ -1,6 +1,7 @@
 Today we're going to deal with data structure ^_^
 
 ### Simple logical expressions
+## relational operators
 # we can make R evaluate some expressions, receiving outcomes "TRUE" or "FALSE":
 1 < 2
 2 > 3
@@ -20,3 +21,31 @@ b <- 2
 a < b
 # if we want to make R consider the alphabetical order, we can use brackets:
 "a" < "b"
+# let's test the identity of a variable:
+a <- "tree"
+a == "tree"
+a != "tree"
+
+## logical operators
+# let's evaluate the intersection of two logical expression, so if both of them are TRUE; this is called the "And" operator:
+a <- 1
+b <- 3
+a < 3 && b < 4
+a > 3 && b < 4
+# the "or" operator, instead:
+a > 3 || b < 4
+# to negate a logical value, that is, to obtain the opposite logical value:
+!FALSE
+!(a > 3 || b < 4)
+
+## priorities
+# multiplications have the priority over sums and subtractions:
+1 + 2 * 3
+# exponentiations have the priority even over multiplications and divisions:
+1 + 2 * 3 ** 2
+# everything between parenthesis has the priority over everything:
+(1 + 2) * 3
+# relational operators have lower priorities than numerical operators:
+(1 + 2) * 3 < a
+# logical operators have lower priorities than relational operators:
+(1 + 2) * 3 < a || b > 2 ** 3 / 2
