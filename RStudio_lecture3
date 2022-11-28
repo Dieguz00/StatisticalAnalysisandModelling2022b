@@ -98,7 +98,19 @@ class(taxa_age)
 # now let's create a sequence of numbers:
 my_integer <- 6:10
 my_integer
-# if i want to extract an element from this sequence:
+# if i want to extract one element from this sequence, square brackets are fabolous:
+my_integer[2]
+# to extract a series of elements that are located one after the other:
+my_integer[2:4]
+# to extract some specific elements, we use the function "c":
+my_integer[c(1, 2, 4)]
+# another way of extracting just some elements within a vector is to create logical vector and then apply it on the integer vector:
+my_logical <- c(T, F, T, F, T)
+my_integer[my_logical]
+# if the logical vector is shorter than the integer vector, a process called "recycling" occurs:
+my_logical <- c(F, T)
+my_integer[my_logical]
+# this process leads to a repeated extraction, that follows the "rythm" put in the logical vector; this happens until the shorter vector "fills" the longest one
 
 ## matrix
 # they have 2 dimensions
