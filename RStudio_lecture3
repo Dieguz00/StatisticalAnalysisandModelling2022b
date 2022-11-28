@@ -51,3 +51,61 @@ a > 3 || b < 4
 (1 + 2) * 3 < a || b > 2 ** 3 / 2
 # let's try to put a "negation" operator for the expression:
 (1 + 2) * 3 < a || !(b > 2 ** 3 / 2)
+
+### Data structure
+## vectors
+# vectors are monodimensional (unidimensional)
+# vectors can be character, logical, integer, numerical
+# to build a vector we can create a sequence of integer numbers:
+1:10
+10:1
+# let's assign a sequence of integer numbers to a variable:
+my_range <- 1:10
+my_range
+# let's see the type of variable we've just created:
+typeof(my_range)
+# another way of writing a sequence is through the function "seq":
+seq(from = 1, to = 10)
+# if we want to pick numbers, within this sequence, by steps:
+seq(from = 1, to = 10, by 2)
+# in some cases, the last number won't coincide with the maximum range of the sequence:
+seq(from = 1, to = 10, by = 2.2)
+# if we want a sequence of x elements within the minimum and maximum ranges of a sequence, already evenly spaced:
+seq(from = 1, to = 10, length.out = 15)
+# if we want to repeat a number or sequence x times, we use the function "rep":
+rep(1, times = 5)
+rep(1:5, times = 5)
+# if we want to repeat each element x times but starting the next one only after finishing the previous one:
+rep(1:5, each = 5)
+# to concatenate various elements together, we use the function "c":
+c(TRUE, FALSE, TRUE)
+# then, to create a vector, we use the function "vec":
+vec <- c(TRUE, FALSE, TRUE)
+vec
+# we can use vectors to store our data:
+is_native <- c(T, F, T)
+n_ind <- c(10L, 7L, 5L)
+taxa_age <- c(2.11, 10.5, 68.9)
+taxa <- c("plant", "bird", "mammal")
+# if we want to know the number of elements inside a vector, we use the function "length":
+length(taxa)
+# we can use the functions "typeof" or "class" to identify the nature of a vector; the difference is that "typeof" is deeper than "class":
+typeof(n_ind)
+class(n_ind)
+# another difference between these two functions is that "class" says "numerical" instead of "double", but these two terms mean the same:
+typeof(taxa_age)
+class(taxa_age)
+# now let's create a sequence of numbers:
+my_integer <- 6:10
+my_integer
+# if i want to extract an element from this sequence:
+
+## matrix
+# they have 2 dimensions
+
+## list
+# the most flexible structure
+# they can contain anything
+
+## dataframe
+# 
