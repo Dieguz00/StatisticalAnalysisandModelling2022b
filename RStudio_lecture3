@@ -43,9 +43,11 @@ a > 3 || b < 4
 1 + 2 * 3
 # exponentiations have the priority even over multiplications and divisions:
 1 + 2 * 3 ** 2
-# everything between parenthesis has the priority over everything:
+# everything that is between parenthesis has the priority over everything else:
 (1 + 2) * 3
 # relational operators have lower priorities than numerical operators:
 (1 + 2) * 3 < a
 # logical operators have lower priorities than relational operators:
 (1 + 2) * 3 < a || b > 2 ** 3 / 2
+# let's try to put a "negation" operator for the expression:
+(1 + 2) * 3 < a || !(b > 2 ** 3 / 2)
