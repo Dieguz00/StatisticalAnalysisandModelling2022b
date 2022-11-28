@@ -1,1 +1,22 @@
-A
+Today we're going to deal with data structure ^_^
+
+### Simple logical expressions
+# we can make R evaluate some expressions, receiving outcomes "TRUE" or "FALSE":
+1 < 2
+2 > 3
+# in the case of "bigger/smaller than or equal", the "=" goes always after the ">" or "<":
+2 <= 3
+2 >= 2
+# in the case of "equal to", we need two "=":
+4 == 4
+# this due to the fact that just one "=" operates the same function as "<-":
+a = 4
+a <- 4
+# if we want to test if two objects are different:
+2 != 5
+# example with outcome "TRUE"
+a <- 3
+b <- 2
+a < b
+# if we want to make R consider the alphabetical order, we can use brackets:
+"a" < "b"
