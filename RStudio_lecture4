@@ -1,1 +1,50 @@
-a
+## Indexing (last part)
+# let's create a vector:
+my_integer <- 6:10
+# let's see its length:
+length(my_integer)
+# and let's apply a name to its length:
+integer_length <- length(my_integer)
+# to extract the last element from a vector:
+my_integer[integer_length]
+# to extract the third last element from a vector:
+my_integer[(integer_length - 2):integer_length]
+
+
+### Modifying vectors
+## combining indexing and assessing allows to modify vectors
+# let's create a vector with a wrong variable:
+work_days <- c("monday", "tuesday", "wednesday", "thursday", "sunday")
+work_days
+# if we want to modify a certain element, we should assign to that element a new value:
+work_days[5] <- "friday"
+work_days
+# to modify more than one element:
+scores <- c("good", "good", "n.c.", "n.c.", "excellent")
+scores[3:4] <- "insufficient"
+scores
+# otherwise, we can also use the logical values to access and modify our vector, by choosing the elements to modify with "TRUE":
+scores <- c("good", "good", "n.c.", "n.c.", "excellent")
+scores_to_fix <- c(F, F, T, T, F)
+scores[scores_to_fix]
+scores[scores_to_fix] <- "insufficient"
+scores
+
+# to add elements to a certain vector:
+my_integer <- 1:5
+c(my_integer, 6:10)
+my_integer <- c(my_integer, 6:10)
+my_integer
+# or, otherwise, we could create another vector and then concatenate it to the previous one:
+my_integer2 <- 11:15
+c(my_integer, my_integer2)
+my_integer <- c(my_integer, my_integer2)
+my_integer
+
+# to eliminate the first element from a certain vector:
+my_integer <- my_integer[-1]
+my_integer
+# to remove a series of elements:
+my_integer[-(3:7)]
+# to remove elements that are not in sequence:
+my_integer[-c(1,3,7)]
