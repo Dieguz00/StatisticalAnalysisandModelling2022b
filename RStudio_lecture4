@@ -155,3 +155,16 @@ as.numeric(c("1", "hello", "3.14"))
 # the same goes for characters into integer:
 as.integer(c("1", "hello", "3.14"))
 
+
+## Testing the type of a vector
+
+# let's ask R the type of many vectors:
+is.logical(c(TRUE, FALSE))
+is.integer(c("hello", "unicorns"))
+is.double(c(3.14, 2))
+is.numeric(c(3.1, 2L))
+is.character(c("hello", "good morning"))
+
+# remember to preferentially use "double" instead of "numeric", as the second one could be misleading:
+is.double(c(3L,2L))
+is.numeric(c(3L,2L))
