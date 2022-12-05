@@ -1,28 +1,39 @@
 ## Indexing (last part)
+
 # let's create a vector:
 my_integer <- 6:10
+
 # let's see its length:
 length(my_integer)
+
 # and let's apply a name to its length:
 integer_length <- length(my_integer)
+
 # to extract the last element from a vector:
 my_integer[integer_length]
+
 # to extract the third last element from a vector:
 my_integer[(integer_length - 2):integer_length]
 
 
+
 ### Modifying vectors
+
 ## combining indexing and assessing allows to modify vectors
+
 # let's create a vector with a wrong variable:
 work_days <- c("monday", "tuesday", "wednesday", "thursday", "sunday")
 work_days
+
 # if we want to modify a certain element, we should assign to that element a new value:
 work_days[5] <- "friday"
 work_days
+
 # to modify more than one element:
 scores <- c("good", "good", "n.c.", "n.c.", "excellent")
 scores[3:4] <- "insufficient"
 scores
+
 # otherwise, we can also use the logical values to access and modify our vector, by choosing the elements to modify with "TRUE":
 scores <- c("good", "good", "n.c.", "n.c.", "excellent")
 scores_to_fix <- c(F, F, T, T, F)
@@ -35,6 +46,7 @@ my_integer <- 1:5
 c(my_integer, 6:10)
 my_integer <- c(my_integer, 6:10)
 my_integer
+
 # or, otherwise, we could create another vector and then concatenate it to the previous one:
 my_integer2 <- 11:15
 c(my_integer, my_integer2)
@@ -44,7 +56,102 @@ my_integer
 # to eliminate the first element from a certain vector:
 my_integer <- my_integer[-1]
 my_integer
+
 # to remove a series of elements:
 my_integer[-(3:7)]
+
 # to remove elements that are not in sequence:
 my_integer[-c(1,3,7)]
+
+
+## Operations with vectors
+
+# let's create two vectors:
+vec1 <- 0:2
+vec2 <- 3:5
+
+# then, let's sum them:
+vec1+vec2
+
+# if we take a look to the vectors, we understand that the result is given by the sum of their element, in order:
+vec1
+vec2
+
+# let's do the other operations, for which the same process applies:
+vec1-vec2
+vec1/vec2
+vec1*5
+
+# if we try to make operations with vectors of different length, the shorter vector is repeated cyclically until the longer one is completed:
+vec3 <- 1:2
+vec1
+vec1+vec3
+
+
+## Namying vectors
+
+# the elements of a vector can be named,specifying, for each name, its value:
+c("Rosaceae"=45L, "Fabaceae"=38L, "Poaceae"=56L)
+plant_diversity <- c("Rosaceae"=45L, "Fabaceae"=38L, "Poaceae"=56L)
+plant_diversity
+
+# we can also use names to extract a certain element:
+plant_diversity["Rosaceae"]
+
+# to extract more elements, create a vector of names:
+plant_diversity[c("Rosaceae", "Poaceae")]
+
+# to extract just the names inside a vector (thus creating a character vector):
+names(plant_diversity)
+
+# to change the names of the elements of a vector:
+names(plant_diversity)[2] <- "leguminosae"
+plant_diversity
+
+# to eliminate the names of the elements of a vector:
+names(plant_diversity) <- NULL
+plant_diversity
+
+
+
+
+
+### Preview of the next lecture
+
+## Making vectors with different types of elements (type coertion)
+
+# we can create vectors also with different types of elements:
+c("hello", 3)
+c(FALSE, 3L)
+c(TRUE, 3.14)
+c(TRUE, "hello")
+c("hello", 3L)
+
+# in this case, character + numerical = charac, numerical + integer = numer, logical + character = charac, logical + numerical = numer, logical + integer = integ
+
+# conseqequently, the priority order is: character, numerical, integer, logical
+
+
+## Transforming vettor types
+
+# to transform a logical vector in a vector of another type:
+c(TRUE, FALSE)
+as.integer(c(TRUE, FALSE))
+as.character(c(T,F))
+
+# moreover:
+class(as.double(c(TRUE, FALSE)))
+
+# if you transform, instead, a numerical in a logical, all 0s become FALSE, while all other numbers become TRUE:
+as.logical(c(0,1,2))
+
+# we can't transform characters into logical, except for "TRUE" and "FALSE":
+as.logical(c("TRUE", "FALSE"))
+as.logical(c("1", "hello", "3.14", "TRUE"))
+
+# we can't transform characters into numerical, except for numbers themselves:
+as.numeric(c("1", "hello", "3.14"))
+
+# the same goes for characters into integer:
+as.integer(c("1", "hello", "3.14"))
+
