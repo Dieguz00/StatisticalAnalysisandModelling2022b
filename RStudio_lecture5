@@ -18,3 +18,71 @@ typeof(m)
 # let's create another matrix, this time specifying columns:
 m <- matrix(LETTERS[1:9], ncol=3)
 m
+
+
+## Modifying a matrix
+
+# considering the last matrix created, let's traspone it:
+t(m)
+# or also, by "recreating" the matrix:
+m <- matrix(data=LETTERS[1:9], ncol=3, byrow=TRUE)
+m
+
+
+## Creating a matrix (pt.2)
+
+# another way to create matrixes is to bind vectors, so create some of them:
+first_row <- 1:5
+second_row <- 11:15
+third_row <- 101:105
+# and the bind them together in a matrix:
+rbind(first_row, second_row, third_row)
+
+# on the other hand, we can also bind them in columns, rather than in rows:
+first_col <- 1:5
+second_col <- 11:15
+third_col <- 101:105
+cbind(first_col, second_col, third_col)
+
+
+## Analyzing a matrix
+
+# we can extract some info about our matrix:
+length(m)
+nrow(m)
+ncol(m)
+# we can also take a look at the number of raws and columns together, in this respective order:
+dim(m)
+
+
+## Modifying a matrix (pt.2)
+
+# we can see and modify (add) the names of rows and columns:
+rownames(m)
+rownames(m) <- c("r1", "r2", "r3")
+m
+colnames(m) <- c("c1", "c2", "c3")
+m
+
+# or we can eliminate names thanks to the NULL vector (a vector of lenght 0, it doesn't exist):
+rownames(m) <- NULL
+m
+
+
+## Analyzing a matrix (pt.2)
+
+# to extract a specific value, specify the row and the column, respectively in this order:
+m[1, 1]
+m[2,1]
+m[2,3]
+# or you can also extract just a whole row or a whole column:
+m[1, ]
+m[, 2]
+# or also more than one raw or more than one column:
+m[, 2:3]
+m[, c(1,3)]
+m[2:3, -2]
+# in this last case, "-2" stands for "every column except the second one
+# you can also use names instead of numbers, even in the same "request":
+m["r1", ]
+m["r1", c(1,3)]
