@@ -1,0 +1,10 @@
+# Point 1
+vec1 <- seq(5, -10, length.out = 1000)
+length(vec1)
+vec1
+head(vec1)
+head(vec1, n = 1)
+tail(vec1)
+tail(vec1, n = 1)
+
+# Point 2
