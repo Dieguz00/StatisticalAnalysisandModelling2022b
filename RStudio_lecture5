@@ -1,8 +1,8 @@
-### Matrixes
+### Matrices
 
 ## Creating a matrix
 
-# matrixes are two-dimensional, while vectors are one-dimensional
+# matrices are two-dimensional, while vectors are one-dimensional
 # create a vector
 vec1 <- 1:9
 # create a matrix, specifying the number of rows; remember that the first argument within parenthesis is the vector, the second is the number of rows:
@@ -31,7 +31,7 @@ m
 
 ## Creating a matrix (pt.2)
 
-# another way to create matrixes is to bind vectors, so create some of them:
+# another way to create matrices is to bind vectors, so create some of them:
 first_row <- 1:5
 second_row <- 11:15
 third_row <- 101:105
@@ -105,3 +105,34 @@ avg_scores > 8
 avg_scores >= 8
 # in this matrix, to extract students (rows) whose mean is higher than 8:
 m[rowMeans(m)>8, ]
+
+
+## Modifying a matrix (pt.3)
+
+# to modify a precise element, specify its row and column (thus, its position) and then assign it a new value:
+m
+m[1,1]
+m[1,1] <- 9
+m
+# you can also use names instead of numbers:
+m["student2", 2] <- 9
+m
+# and also modify a whole column:
+m[,3] <- 6
+# even with specifi new values:
+m[,2] <- c(7,9,10)
+m
+
+# little extra info: to see the mean of each row:
+rowMeans(m)
+
+# remember that matrices need to be rectangular
+
+
+## Operations with matrices
+
+# many operations can be applied to matrices:
+m+2
+m/2
+# to achieve multiplication between matrices, use this simbol:
+%*%
