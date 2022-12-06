@@ -12,10 +12,22 @@ length(vec1) == 1000
 
 ## Point 3
 vec2 <- vec1[-(991:1000)]
-vec2
+tail(vec2)
 # or also (especially if we don't remember the exact vector length):
 vec2 <- vec1[-((length(vec1)-9):length(vec1))]
-vec2
+tail(vec2)
 
 ## Point 4
 length(vec2) == length(vec1) - 10
+
+## Point 5
+?Constants
+
+## Point 6
+LETTERS
+paste0(LETTERS[1:10], 1:10)
+# the function "paste" is different from "paste0", as the last one paste the elements together without spaces between them
+
+## Point 7
+vec3 <- c("a", 1)
+vec3
