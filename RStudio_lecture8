@@ -41,3 +41,29 @@ penguins %>%
   geom_point() + labs(title="Penguin size, Palmer Station LTER",
                       subtitle="Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins",
                       x="Flipper length", y="Body mass")
+
+# let's add a background too:
+penguins %>% 
+  ggplot(aes(x=flipper_length_mm, y=body_mass_g)) + 
+  geom_point() + labs(title="Penguin size, Palmer Station LTER",
+                      subtitle="Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins",
+                      x="Flipper length", y="Body mass") +
+  theme(panel.background = element_rect(fill="white"))
+
+# let's try instead to change the theme:
+penguins %>% 
+  ggplot(aes(x=flipper_length_mm, y=body_mass_g)) + 
+  geom_point() + labs(title="Penguin size, Palmer Station LTER",
+                      subtitle="Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins",
+                      x="Flipper length", y="Body mass") +
+  theme_classic()
+
+# let's assign the whole element to "p":
+p <- penguins %>% 
+  ggplot(aes(x=flipper_length_mm, y=body_mass_g)) + 
+  geom_point() + labs(title="Penguin size, Palmer Station LTER",
+                      subtitle="Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins",
+                      x="Flipper length", y="Body mass")
+                      
+# now let's add to "p" various colours, different for every species:
+p + geom_point(aes(col=species))
