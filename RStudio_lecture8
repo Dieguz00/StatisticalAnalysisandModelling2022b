@@ -9,3 +9,35 @@ head(penguins, n=10)
 
 glimpse(penguins)
 ?penguins
+
+
+# to pipe an element into a function, thus transforming it into an argument:
+# Ctrl + Shift + M
+penguins %>% 
+  ggplot()
+  
+ggplot(penguins)
+
+# now let's add aesthetics:
+penguins %>% 
+  ggplot(aes(x=flipper_length_mm, y=body_mass_g))
+
+# now let's add geometry:
+# p.s. you can go on a new line and R, depending on your code, will mantain you into the function you're writing:
+penguins %>% 
+  ggplot(aes(x=flipper_length_mm, y=body_mass_g)) + 
+  geom_point()
+
+# let's add a title, subtitle, the x and the y names:
+penguins %>% 
+  ggplot(aes(x=flipper_length_mm, y=body_mass_g)) + 
+  geom_point() + labs(title="The penguin graph",
+                      subtitle="Yes, they're fabolous",
+                      x="Flipper length", y="Body mass")
+
+# let's be more serious =):
+penguins %>% 
+  ggplot(aes(x=flipper_length_mm, y=body_mass_g)) + 
+  geom_point() + labs(title="Penguin size, Palmer Station LTER",
+                      subtitle="Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins",
+                      x="Flipper length", y="Body mass")
