@@ -67,3 +67,49 @@ p <- penguins %>%
                       
 # now let's add to "p" various colours, different for every species:
 p + geom_point(aes(col=species))
+
+# now, instead, let's choose some specific colours:
+p + geom_point(aes(col=species)) + 
+  scale_colour_manual(values=c("darkorange", "purple", "cyan4"))
+
+# let's use the classic theme:
+p + geom_point(aes(col=species)) + 
+  scale_colour_manual(values=c("darkorange", "purple", "cyan4")) + 
+  theme_classic()
+
+# if we want to change the legend name:
+p + geom_point(aes(col=species)) + 
+  scale_colour_manual(values=c("darkorange", "purple", "cyan4"),
+                      name="Species") + 
+  theme_classic()
+  
+# let's instead use some already created palettes! there exist three types of palette
+# divergent palettes use white as the central colour: this is useful when there are values that go from negative to positive values
+# so:
+p + geom_point(aes(col=species)) + 
+  scale_colour_brewer(palette="Set2",
+                      name="Species") + 
+  theme_classic()
+
+# now let's add information also about the island:
+p <- penguins %>% 
+  ggplot(aes(x=flipper_length_mm, y=body_mass_g, shape=island)) + 
+  geom_point() + labs(title="Penguin size, Palmer Station LTER",
+                      subtitle="Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins",
+                      x="Flipper length", y="Body mass")
+
+p + geom_point(aes(col=species)) + 
+  scale_colour_brewer(palette="Set2",
+                      name="Species") + 
+  theme_classic()
+
+# if we want to creat a bar chart:
+penguins %>%
+  ggplot() +
+  geom_bar(aes(x=species))
+  
+# instead, if we want to create an histogram, with a certain binwidth:
+penguins %>%
+  ggplot() +
+  geom_histogram(aes(x=body_mass_g), binwidth=250)
+
