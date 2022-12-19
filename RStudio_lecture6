@@ -1,0 +1,129 @@
+vec <- 1:9
+vec
+
+sum(vec)
+m <- matrix(vec, nrow = 3)
+m
+
+sum(m)
+colnames(m) <- c("sp1",
+                 "sp2",
+                 "sp3")
+rownames(m) <- c("cave1",
+                 "cave2",
+                 "cave3")
+m
+sum(m[, 1])
+sum(m[, 2])
+colSums(m)
+rowSums(m)
+
+mean(vec)
+mean(m)
+colMeans(m)
+rowMeans(m)
+sd(m)
+sd(m[1, ])
+
+summary(vec)
+summary(m)
+t(m)
+summary(t(m))
+
+
+# Factors
+
+vec <- c("Tree", "Grass", "Forb", "Grass", "Tree")
+vec
+class(vec)
+fct <- factor(vec)
+fct
+
+vec <- c("Tree", "Grass", "Forb", "Grass", "Tree")
+lev <- c("Tree", "Grass", "Forb", "Liana")
+fct <- factor(vec, levels = lev)
+fct
+summary(fct)
+
+vec <- c("Tree", "Grass", "forb", "Grass", "Tree")
+fct <- factor(vec, levels = lev)
+fct
+
+vec <- c("Low Temp", 
+         "High Temp", 
+         "Mid Temp",
+         "Mid Temp",
+         "Low Temp")
+factor(vec)
+factor(vec, ordered = TRUE)
+lev <- c("Low Temp",
+         "Mid Temp",
+         "High Temp")
+factor(vec, 
+       levels = lev, 
+       ordered = TRUE)
+levels(fct)
+
+
+student <- "piero"
+scores <- c(27, 29, 25, 30)
+is_enrolled <- FALSE
+my_list <- list(student,
+                scores,
+                is_enrolled)
+my_list
+class(my_list)
+typeof(my_list)
+str(my_list)
+length(my_list)
+
+list_names <- c("student",
+                "scores",
+                "enrollment")
+list_names
+my_list
+names(my_list)
+names(my_list) <- list_names
+my_list
+str(my_list)
+
+names(my_list) <- NULL
+my_list
+
+
+my_list <- list(student = student,
+                scores = scores,
+                enrollment = is_enrolled)
+my_list
+
+my_list[1]
+class(my_list[1])
+my_list[[1]]
+class(my_list[[1]])
+str(my_list[1])
+str(my_list[[1]])
+my_list["student"]
+my_list[["student"]]
+str(my_list["student"])
+str(my_list[["student"]])
+my_list$student
+class(my_list$student)
+
+my_list[c(1, 3)]
+my_list[c("student", "enrollment")]
+my_list[[c(1, 3)]]
+
+student <- "piero"
+scores <- c(first_test = 27, 
+            second_test = 29, 
+            third_test = 25, 
+            fourth_test = 30)
+is_enrolled <- FALSE
+my_list <- list(student = student,
+                scores = scores,
+                enrollment = is_enrolled)
+str(my_list)
+my_list[[c(2, 4)]]
+my_list[[c("scores", "fourth_test")]]
+my_list[[2]][4]
+my_list[[2]]["fourth_test"]
