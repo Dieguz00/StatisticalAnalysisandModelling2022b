@@ -1,1 +1,11 @@
-a
+install.packages("palmerpenguins")
+library(palmerpenguins)
+library(tidyverse)
+
+data(penguins)
+
+head(penguins)
+head(penguins, n=10)
+
+glimpse(penguins)
+?penguins
