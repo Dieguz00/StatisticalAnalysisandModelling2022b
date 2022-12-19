@@ -1,0 +1,107 @@
+student <- "piero"
+scores <- c(first_test = 26,
+            second_test = 29,
+            third_test = 25,
+            fourth_test = 30)
+is_enrolled <- FALSE
+my_list <- list(student = student,
+                scores = scores,
+                enrollment = is_enrolled)
+my_list[[1]]
+my_list[["student"]]
+my_list$student
+my_list[1]
+my_list[1:2]
+my_list[[2]]
+my_list[[2]][1]
+my_list[[c(2, 1)]]
+str(my_list)
+my_list[["scores"]]["first_test"]
+
+my_list[["scores"]]["first_test"] <- 27
+my_list
+my_list[["course"]] <- "GCE"
+my_list$internship <- FALSE
+my_list
+length(my_list)
+str(my_list)
+
+my_list[[8]] <- "B2"
+my_list
+names(my_list)[8] <- "english certification"
+names(my_list)
+my_list[[6]] <- NULL
+str(my_list)
+my_list <- my_list[-6]
+str(my_list)
+
+list1 <- list(a1 = 1:10,
+              b1 = LETTERS[1:3])
+list1
+list2 <- list(a2 = c(2.2, 3.1),
+              b2 = c(FALSE, TRUE))
+list2
+
+c(list1, list2)
+c(list1 = list1, list2 = list2)
+
+list(list1, list2)
+list(list1 = list1, list2 = list2)
+
+str(c(list1 = list1, list2 = list2))
+str(list(list1 = list1, list2 = list2))
+
+
+dat <- data.frame(a = 1:10,
+                  b = letters[1:10],
+                  c = rep(c(FALSE, TRUE), 5))
+dat
+str(dat)
+nrow(dat)
+ncol(dat)
+dim(dat)
+
+names(dat)
+names(dat) <- c("col1", "col2", "col3")
+dat
+
+dat[1, ]
+class(dat[1, ])
+dat[, 2]
+class(dat[, 2])
+dat[, 2:3]
+dat[1, 3]
+dat[1:2, 2:3]
+dat[[2]]
+dat[["col2"]]
+dat[, "col2"]
+dat$col2
+dat$col1 < 6
+dat[dat$col1 < 6, ]
+dat[dat$col3 == FALSE, ]
+
+dat$col4 <- LETTERS[1:10]
+dat
+dat[1, 1] <- 1.4
+dat
+dat$col4 <- NULL
+dat
+dat <- dat[, -3]
+dat
+
+dat_1 <- data.frame(genus = c("Silene",
+                              "Pinus"),
+                    has_flower = c(TRUE,
+                                   FALSE),
+                    n = c(10, 2)) 
+dat_1
+dat_2 <- data.frame(genus = "Malus",
+                    has_flower = TRUE,
+                    n = 1)
+dat_2
+dat_3 <- rbind(dat_1, dat_2)
+is_herbaceous <- c(TRUE, FALSE, FALSE)
+cbind(dat_3, is_herbaceous)
+
+tidyverse
+palmerpenguins
